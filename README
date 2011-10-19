@@ -1,0 +1,12 @@
+A very simple middleware to provide an error callback.
+You should just copy this file into your project.
+
+``` ruby
+Faraday.new( URL, :ssl => {}) do |builder|
+  builder.use Faraday::Response::RaiseError
+  builder.use Faraday::Response::ErrorHandler, lambda { |env,s|
+    LOGGER.info( "response body: #{env[:body]}" )
+    LOGGER.info( "error #{s}: #{env.inspect}" )
+  }
+end
+```
