@@ -1,5 +1,5 @@
 A very simple middleware to provide an error callback.
-You should just copy this file into your project.
+You should just copy the `faraday_error_handler.rb` file into your project.
 
 ``` ruby
 Faraday.new( URL, :ssl => {}) do |builder|
